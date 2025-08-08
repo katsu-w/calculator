@@ -10,7 +10,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	border: 1px solid #6215d7;
+	border: 2px solid #6215d7;
 	border-radius: rem(10);
 	padding: rem(10);
 	box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
@@ -23,7 +23,7 @@
 	}
 	
 	&__display {
-		border: 1px solid #6215d7;
+		border: 2px solid #6215d7;
 		border-radius: rem(10);
 		padding: rem(8);
 		width: 100%;
@@ -34,8 +34,8 @@
 	}
 	
 	&__text {
-		min-height: rem(30);
-		font-size: rem(20);
+		min-height: rem(42);
+		font-size: rem(28);
 		
 		&.result {
 			color: #8b53e0;
@@ -50,10 +50,11 @@
 		
 		& .button {
 			background: transparent;
-			border: 1px solid #6215d7;
+			border: 2px solid #6215d7;
 			border-radius: rem(5);
-			padding: rem(10) rem(15);
+			padding: rem(15 ) rem(25);
 			color: #e0e0e0;
+			font-size: rem(28);
 		}
 	}
 }
