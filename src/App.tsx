@@ -10,14 +10,14 @@ export function App() {
 	const [error, setError] = useState('');
 	const [isResult, setIsResult] = useState(false);
 	
-	function setDisplay(char: string) {
+	function setDisplay(key: string) {
 		if (!operator) {
-			setIsResult(false)
-			setFirstOperand(val => val + char);
+			setIsResult(false);
+			setFirstOperand(val => val + key);
 			setError('');
 			return;
 		} else {
-			setSecondOperand(val => val + char);
+			setSecondOperand(val => val + key);
 			setError('');
 			return;
 		}
@@ -44,14 +44,15 @@ export function App() {
 		setIsResult(true);
 	}
 	
-	function handleClick(char: string) {
-		switch (char) {
+	function handleClick(key: string) {
+		setIsResult(false);
+		switch (key) {
 			case '/':
 			case '*':
 			case '-':
 			case '+':
 				if (firstOperand) {
-					setOperator(char);
+					setOperator(key);
 				} else {
 					setError('Сначала добавьте операнд')
 				}
@@ -75,22 +76,21 @@ export function App() {
 				
 			
 			default:
-				setDisplay(char);
+				setDisplay(key);
 				break;
 		}
-		
 	}
 
   return (
     <>
 			<div className="calculator">
-				<div className="calculator__display">
-					<span className={`calculator__text${isResult ? ' result' : ''}`}>
-						{firstOperand + ' ' + operator + ' ' + secondOperand}
-					</span>
-				</div>
 				<div className="calculator__error">
 					<span>{error}</span>
+				</div>
+				<div className="calculator__display">
+					<p className={`calculator__text${isResult ? ' result' : ''}`}>
+						{firstOperand + ' ' + operator + ' ' + secondOperand}
+					</p>
 				</div>
 				<div className="calculator__buttons">
 					{
