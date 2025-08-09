@@ -1,7 +1,6 @@
 import './styles/main.scss'
 import { useState } from 'react';
-
-const BUTTONS: string[] = ['7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', 'C', '0', '=', '+',];
+import { BUTTONS } from '../constants/constants.ts';
 
 export function App() {
 	const [firstOperand, setFirstOperand] = useState('');
